@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+</head>
+<body>
+    <h1>Users List</h1>
+    <a href="/users/new">Create New User</a>
+    <ul>
+        {{range .users}}
+        <li>
+            {{.Name}} ({{.Email}})
+            <a href="/users/edit/{{.ID}}">Edit</a>
+            <a href="/users/delete/{{.ID}}">Delete</a>
+        </li>
+        {{else}}
+        <li>No users found</li>
+        {{end}}
+    </ul>
+</body>
+</html>
